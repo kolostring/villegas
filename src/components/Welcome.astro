@@ -1,154 +1,439 @@
 ---
+import Image from "astro/components/Image.astro";
+import Marquee from "./Marquee.astro";
+import CapitolioImage from "../assets/capitolio.webp";
 
+import House3RoomsImage from "../assets/property4.jpg";
+import House2RoomsImage from "../assets/room4.jpg";
+import WholeBuildingImage from "../assets/property1.jpg";
+import Room1 from "../assets/nearby1.jpg";
+import Room2 from "../assets/img12.jpg";
+import Room3 from "../assets/img77.jpg";
+import Room4 from "../assets/img13.jpg";
+import Room5 from "../assets/img14.jpg";
+import Room6 from "../assets/img15.jpg";
+import Room7 from "../assets/room7.jpg";
+import Room8 from "../assets/property2.jpg";
+import Room9 from "../assets/property3.jpg";
+import Room10 from "../assets/room1.jpg";
+import Room11 from "../assets/room3.jpg";
+import Room12 from "../assets/img21.jpg";
+import Room13 from "../assets/room5.jpg";
+import Room14 from "../assets/img30.jpg";
+
+import GlobeIcon from "../assets/globe.svg?raw";
+import CleaningIcon from "../assets/vacuum.svg?raw";
+import CleanClothesIcon from "../assets/laundry.svg?raw";
+import LaundryIcon from "../assets/local_laundry.svg?raw";
+import SecurityIcon from "../assets/shield.svg?raw";
+
+import BreakFastIcon from "../assets/egg.svg?raw";
+import CafeIcon from "../assets/cafe.svg?raw";
+import RestaurantIcon from "../assets/restaurant.svg?raw";
+import LiquorIcon from "../assets/liquor.svg?raw";
+
+import CarsImage from "../assets/img40.jpg";
+import HistoricTourImage from "../assets/nearby3.jpg";
+import BeachImage from "../assets/guanabo.jpg";
+import NightActivitiesImage from "../assets/pool-party.jpg";
+import MassageImage from "../assets/massage.jpg";
+import SalsaDanceImage from "../assets/salsa-dance.jpg";
+import Logo from "../assets/logo.png";
+import type { ImageMetadata } from "astro";
+
+// Importaciones necesarias
 ---
 
-<header>
-  <h1>Vive en el Corazón de La Habana: Historia y Elegancia Art Decó</h1>
-
-  <ul>
-    <li>Ubicada a pasos del Capitolio</li>
-    <li>internet 24/7 y línea local incluida.</li>
+<nav class="sticky top-0 text-primary bg-white/80 backdrop-blur z-50">
+  <ul class="mx-auto items-center max-w-6xl h-full flex gap-4 text-sm py-1">
+    <li>
+      <a href="/">
+        <Image src={Logo} alt="Logo" class="size-8" />
+        <span class="sr-only"> Home </span>
+      </a>
+    </li>
+    <li class="bg-accent ml-auto rounded-sm block h-full px-6 py-1 text-white">
+      <a href="/#contacto">Reservar</a>
+    </li>
   </ul>
+</nav>
+<div class="min-h-screen flex flex-col font-hind">
+  <!-- Header / Hero Section -->
+  <header
+    class="bg-white relative grid min-h-fit text-primary px-4 md:px-8 lg:px-16 isolate"
+  >
+    <Image
+      class="w-full object-cover min-h-32 h-[20vw] object-[0%_60%] rounded-b-3xl"
+      src={Room1}
+      alt="Imagen de la habana"
+    />
 
-  <a href="#"> Reserva Ahora y recibe nuestro Coctel de Bienvenida </a>
-</header>
+    <div
+      class="container py-4 mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-[2fr_1fr] gap-x-2 justify-center"
+    >
+      <h1
+        class="font-playfair tracking-tight max-w-[14ch] text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+      >
+        Vive en el Corazón de La Habana
+      </h1>
 
-<main>
-  <section>
-    <h2>Ubicación Perfecta: Donde Todo Está a Tu Alcance</h2>
-    <p>
-      Situada en la calle Villegas, a pasos del Capitolio Nacional y rodeada de
-      plazas, museos, restaurantes y calles llenas de historia como Obispo,
-      nuestra propiedad te conecta con la esencia viva de La Habana. Cada rincón
-      está hecho para que salgas caminando y vuelvas sonriendo.
-    </p>
+      <ul class="mb-8 space-y-2 self-end list-disc tracking-wide">
+        <li>Historia y Elegancia Art Decó</li>
+        <li>Ubicación privilegiada, a solo pasos del Capitolio</li>
+        <li>Internet rápido 24/7 y línea local incluida</li>
+        <li>Cóctel de bienvenida a tu llegada</li>
+      </ul>
+      <a
+        href="#contacto"
+        class="inline-block col-start-2 w-full bg-gradient-to-r from-accent to-accent/80 text-white font-medium py-3 px-8 rounded-lg transition duration-300"
+      >
+        Reserva Ahora
+      </a>
+    </div>
+    <Marquee>
+      <span class="text-primary font-medium">✦ Ubicación privilegiada</span>
+      <span class="text-primary font-medium">✦ Arquitectura Art Decó</span>
+      <span class="text-primary font-medium">✦ Vistas al Capitolio</span>
+      <span class="text-primary font-medium">✦ Azotea común</span>
+      <span class="text-primary font-medium">✦ Internet 24/7</span>
+      <span class="text-primary font-medium">✦ Desayuno incluido</span>
+      <span class="text-primary font-medium">✦ Anfitrión bilingüe</span>
+      <span class="text-primary font-medium">✦ Limpieza diaria</span>
+    </Marquee>
+  </header>
 
-    <p>
-      Esta joya arquitectónica de 1948, renovada con esmero en 2024, conserva el
-      alma del art decó habanero mientras incorpora todas las comodidades
-      modernas. Sus balcones de hierro forjado y la espectacular azotea común
-      -con vistas al Capitolio y área de parrilla- son testigos silenciosos de
-      la historia de La Habana. Más que un alojamiento, es una experiencia
-      auténtica en el corazón de la ciudad.
-    </p>
-  </section>
+  <main class="text-center flex-grow bg-primary text-white">
+    <!-- Ubicación Section -->
+    <section class="py-16 px-4 md:px-8 lg:px-16 bg-beige">
+      <div
+        class="container mx-auto max-w-6xl relative grid justify-items-center"
+      >
+        <h2
+          class="font-playfair w-fit text-3xl md:text-4xl font-bold mb-8 text-white pl-4"
+        >
+          Ubicación Perfecta: Donde Todo Está a Tu Alcance
+        </h2>
 
-  <section>
-    <h2>A tu ritmo, a tu medida</h2>
-    <p>
-      No importa si vienes en pareja, en familia o con amigos: Villegas Havana
-      tiene un espacio para ti. Cada modalidad está diseñada para ofrecerte
-      independencia, comodidad y privacidad con estilo.
-    </p>
-    <ul>
-      <li>
-        <h3>Casa de 2 Habitaciones</h3>
-        <p>
-          Perfecta para parejas o pequeños grupos que buscan intimidad y estilo.
+        <p class="leading-relaxed mb-16 max-w-[70ch] space-y-6 text-lg">
+          Situada en la calle Villegas, a pasos del Capitolio Nacional y rodeada
+          de plazas, museos, restaurantes y calles llenas de historia como
+          Obispo, nuestra propiedad te conecta con la esencia viva de La Habana.
         </p>
 
-        <ul>
-          <li>Para 2–4</li>
-          <li>Baños privados</li>
-          <li>Sala de estar y comedor</li>
-          <li>Cocina equipada</li>
-          <li>Terraza privada y balcón</li>
-          <li>Entrada independiente</li>
-          <li>Acceso a la azotea común</li>
-        </ul>
-      </li>
+        <!-- Espacio para imagen de ubicación -->
+        <div
+          class="bg-gray-200 w-full rounded-lg overflow-hidden h-80 flex items-center justify-center"
+        >
+          <iframe
+            class="size-full"
+            src="https://maps.google.com/maps?f=q&source=s_d&hl=en&saddr=23.133762,-82.354891&z=15&output=embed"
+          ></iframe>
+        </div>
 
-      <li>
-        <h3>Casa de 3 Habitaciones</h3>
-        <p>
-          Ideal para grupos de amigos o familias que desean compartir y
-          disfrutar con total comodidad.
+        <Image
+          src={CapitolioImage}
+          alt="Imagen del Capitolio"
+          class="absolute md:-right-28 md:left-auto -left-12 md:-scale-x-100 -bottom-16 w-40 md:w-3xs saturate-0"
+        />
+      </div>
+    </section>
+
+    <!-- Opciones de Alojamiento -->
+    <section class="py-16 px-4 md:px-8 lg:px-16 bg-white text-primary">
+      <div class="container mx-auto max-w-6xl grid justify-items-center">
+        <h2
+          class="font-playfair text-3xl md:text-4xl font-bold mb-8 text-primary pl-4"
+        >
+          A tu ritmo, a tu medida
+        </h2>
+
+        <p class="text-lg max-w-[70ch] mb-10 leading-relaxed">
+          No importa si vienes en pareja, en familia o con amigos: Villegas
+          Havana tiene un espacio para ti.
         </p>
 
-        <ul>
-          <li>Para 4–6 personas</li>
-          <li>Baños privados</li>
-          <li>Sala-comedor amplia</li>
-          <li>Cocina equipada</li>
-          <li>Terraza privada y balcón</li>
-          <li>Entrada independiente</li>
-          <li>Acceso a la azotea común</li>
-        </ul>
-      </li>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <!-- Casa 2 Habitaciones -->
+          <div
+            class="bg-beige rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+              <Image
+                src={House2RoomsImage}
+                class="size-full object-cover object-[60%_70%]"
+                alt="Imagen Casa 3 Habitaciones"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="font-playfair text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2"
+              >
+                Casa de 2 Habitaciones
+              </h3>
+              <p class="mb-4 text-dark">
+                Perfecta para parejas o pequeños grupos que buscan intimidad y
+                estilo.
+              </p>
 
-      <li>
-        <h3>Inmueble Completo</h3>
-        <p>
-          Vive la experiencia completa de Villegas Havana. Ideal para
-          celebraciones o vacaciones inolvidables.
+              <ul class="space-y-2">
+                <li>Para 2–4 personas</li>
+                <li>Acceso a la azotea común</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Casa 3 Habitaciones -->
+          <div
+            class="bg-beige rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+              <Image
+                src={House3RoomsImage}
+                class="size-full object-cover object-[60%_70%]"
+                alt="Imagen Casa 3 Habitaciones"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="font-playfair text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2"
+              >
+                Casa de 3 Habitaciones
+              </h3>
+              <p class="mb-4 text-dark">
+                Ideal para grupos de amigos o familias que desean compartir y
+                disfrutar con total comodidad.
+              </p>
+
+              <ul class="space-y-2">
+                <li>Para 4–6 personas</li>
+                <li>Acceso a la azotea común</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Inmueble Completo -->
+          <div
+            class="bg-beige rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+              <Image
+                src={WholeBuildingImage}
+                class="size-full object-cover object-[60%_70%]"
+                alt="Imagen Casa 3 Habitaciones"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="font-playfair text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2"
+              >
+                Inmueble Completo
+              </h3>
+              <p class="mb-4 text-dark">
+                Vive la experiencia completa de Villegas Havana. Ideal para
+                celebraciones o vacaciones inolvidables.
+              </p>
+
+              <ul class="space-y-2">
+                <li>Para 8–10 personas</li>
+                <li>Acceso exclusivo a la azotea</li>
+                <li>Privacidad en 3 niveles completos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="leading-relaxed max-w-[70ch] mb-8">
+          Esta joya arquitectónica de 1948, renovada con esmero en 2024,
+          conserva el alma del art decó habanero mientras incorpora todas las
+          comodidades modernas. Sus balcones de hierro forjado y la espectacular
+          azotea común -con vistas al Capitolio y área de parrilla- son testigos
+          silenciosos de la historia de La Habana. Más que un alojamiento, es
+          una experiencia auténtica en el corazón de la ciudad.
         </p>
 
-        <ul>
-          <li>Para 8–10 personas</li>
-          <li>2 salas</li>
-          <li>2 cocinas</li>
-          <li>2 terrazas</li>
-          <li>2 balcones</li>
-          <li>Entrada privada por niveles</li>
-          <li>Acceso exclusivo a la azotea</li>
-          <li>Privacidad en 3 niveles completos</li>
+        <div class="overflow-x-auto w-full pb-6 mb-8">
+          <ul class="flex space-x-4 min-w-max">
+            {
+              [
+                Room1,
+                Room2,
+                Room3,
+                Room4,
+                Room5,
+                Room6,
+                Room7,
+                Room8,
+                Room9,
+                Room10,
+                Room11,
+                Room12,
+                Room13,
+                Room14,
+                House2RoomsImage,
+                House3RoomsImage,
+                WholeBuildingImage,
+              ].map((image) => (
+                <li class="bg-white rounded-lg shadow-md overflow-hidden w-72 flex-shrink-0">
+                  <Image
+                    src={image}
+                    alt=""
+                    class="size-full object-cover object-[60%_70%]"
+                  />
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tu comodidad es nuestra prioridad - SECCIÓN SEPARADA -->
+    <section class="py-16 px-4 md:px-8 lg:px-16 bg-beige">
+      <div class="container mx-auto max-w-6xl">
+        <h2
+          class="font-playfair w-fit mx-auto text-3xl md:text-4xl font-bold mb-8 pl-4"
+        >
+          Tu comodidad es nuestra prioridad
+        </h2>
+
+        <p class="text-lg mb-16 leading-relaxed mx-auto max-w-[70ch]">
+          Desde que llegas, nuestro anfitrión te hace sentir en casa — con
+          calidez, idioma compartido y la certeza de que todo está pensado para
+          tu tranquilidad.
+        </p>
+
+        <ul
+          class="space-y-4 grid grid-cols-2 gap-8 md:grid-cols-5 justify-items-center *:odd:last:col-span-2 md:*:odd:last:col-span-1"
+        >
+          {
+            [
+              [GlobeIcon, "Conexión vía Wifi y Línea local"],
+              [SecurityIcon, "Seguridad y atención las 24h"],
+              [CleaningIcon, "Limpieza del domicilio diaria"],
+              [LaundryIcon, "Toallas y ropa de cama frescas"],
+              [CleanClothesIcon, "Servicio de lavandería opcional"],
+            ].map(([icon, text]) => (
+              <li class="text-lg gap-y-2 max-w-[20ch] text-pretty grid grid-rows-[auto] justify-items-center h-fit font-medium">
+                <div class="[&_svg]:size-16 [&_path]:fill-primary p-2 rounded-full bg-white">
+                  <Fragment set:html={icon} />
+                </div>
+                <span> {text} </span>
+              </li>
+            ))
+          }
         </ul>
-      </li>
-    </ul>
-  </section>
+      </div>
+    </section>
 
-  <section>
-    <h2>Tu comodidad es nuestra prioridad</h2>
-    <p>
-      Desde que llegas, nuestro anfitrión te hace sentir en casa — con calidez,
-      idioma compartido y la certeza de que todo está pensado para tu
-      tranquilidad.
-    </p>
+    <!-- Desayuno Criollo - SECCIÓN SEPARADA -->
+    <section class="py-16 px-4 md:px-8 lg:px-16">
+      <div class="container mx-auto max-w-6xl grid justify-items-center">
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-8 pl-4">
+          Desayuno Criollo y Experiencias Gourmet
+        </h2>
 
-    <ul>
-      <li>Anfitrión bilingüe (inglés/español) + check-in personalizado.</li>
-      <li>Internet rápido 24/7 (para trabajar o planificar excursiones).</li>
-      <li>Limpieza diaria (toallas y ropa de cama frescas).</li>
-      <li>Seguridad 24h y atención personalizada</li>
-      <li>
-        ¿Quieres algo más personalizado? Podemos ayudarte con lavandería, cenas
-        privadas o un guía local. *
-      </li>
-    </ul>
-  </section>
+        <p class="text-lg mb-16 leading-relaxed max-w-[70ch]">
+          El día comienza con café cubano y un desayuno servido con cariño. Si
+          te quedas a almorzar o cenar, podemos preparar algo especial solo para
+          ti, con ese toque casero que no aparece en las guías. Y siempre habrá
+          algo frío a la mano… quizás un ron, quizás un recuerdo que empieza con
+          un brindis.
+        </p>
 
-  <section>
-    <h2>Desayuno Criollo y Experiencias Gourmet</h2>
-    <p>
-      El día comienza con café cubano y un desayuno servido con cariño. Si te
-      quedas a almorzar o cenar, podemos preparar algo especial solo para ti,
-      con ese toque casero que no aparece en las guías. Y siempre habrá algo
-      frío a la mano… quizás un ron, quizás un recuerdo que empieza con un
-      brindis.
-    </p>
-    <ul>
-      <li>Empieza tus días con un desayuno cubano incluido.</li>
-      <li>Acceso a té/café las 24 horas como cortesía de la casa.</li>
-      <li>Almuerzos o cenas a medida si lo deseas. *</li>
-      <li>Minibar con selección de bebidas y rones cubanos. *</li>
-    </ul>
-  </section>
+        <ul
+          class="space-y-4 w-full grid grid-cols-2 gap-8 md:grid-cols-4 justify-items-center"
+        >
+          {
+            [
+              [BreakFastIcon, "Desayuno cubano incluido"],
+              [CafeIcon, "té/café de parte de la casa"],
+              [RestaurantIcon, "Almuerzos o cenas a medida si lo deseas"],
+              [LiquorIcon, "Selección de bebidas a petición"],
+            ].map(([icon, text]) => (
+              <li class="text-lg gap-y-2 max-w-[20ch] text-pretty grid grid-rows-[auto] justify-items-center h-fit font-medium">
+                <div class="[&_svg]:size-16 [&_path]:fill-primary p-2 rounded-full bg-white">
+                  <Fragment set:html={icon} />
+                </div>
+                <span> {text} </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
 
-  <section>
-    <h2>Explora La Habana a tu manera</h2>
-    <p>
-      Desde tu llegada hasta cada rincón que quieras explorar, estamos aquí para
-      ayudarte a descubrir la isla con estilo. ¿Un paseo en auto clásico? ¿Una
-      noche diferente en La Habana cultural? Lo coordinamos todo contigo.
-    </p>
-    <ul>
-      <li>Traslados desde y hacia el aeropuerto.</li>
-      <li>Tours privados por la ciudad y sus joyas escondidas.</li>
-      <li>
-        Experiencias como masajes o cenas privadas también están a tu alcance.
-      </li>
-      <li>Excursiones a playas y destinos fuera de la ciudad.</li>
-      <li>Accesos VIP a espacios culturales como la Fábrica de Arte Cubano.</li>
-    </ul>
-  </section>
-</main>
+    <!-- Explora La Habana -->
+    <section class="py-16 px-4 md:px-8 lg:px-16 bg-white text-primary">
+      <div class="container mx-auto max-w-6xl justify-items-center">
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-8 pl-4">
+          Explora La Habana a tu manera
+        </h2>
+
+        <p class="text-lg mb-16 leading-relaxed max-w-[70ch]">
+          Desde tu llegada hasta cada rincón que quieras explorar, estamos aquí
+          para ayudarte a descubrir la isla con estilo. ¿Un paseo en auto
+          clásico? ¿Una noche diferente en La Habana cultural? Lo coordinamos
+          todo contigo.
+        </p>
+
+        <!-- Carrusel horizontal de experiencias -->
+        <div class="overflow-x-auto w-full pb-6 mb-8 text-primary">
+          <ul class="flex space-x-4 min-w-max">
+            {
+              (
+                [
+                  [
+                    CarsImage,
+                    "Paseo en auto clásico",
+                    "Recorre La Habana en un auto clásico de los años 50, una experiencia inolvidable.",
+                  ],
+                  [
+                    HistoricTourImage,
+                    "Tour histórico",
+                    "Descubre la rica historia de La Habana Vieja con un guía especializado.",
+                  ],
+                  [
+                    BeachImage,
+                    "Excursión a playas",
+                    "Visita las hermosas playas cercanas a La Habana para un día de relax.",
+                  ],
+                  [
+                    NightActivitiesImage,
+                    "Noche cultural",
+                    "Disfruta de la vibrante vida nocturna y cultural de La Habana.",
+                  ],
+                  [
+                    MassageImage,
+                    "Sesiones de Masaje",
+                    "Revitaliza tu cuerpo y mente gracias a un buen masaje.",
+                  ],
+                  [
+                    SalsaDanceImage,
+                    "Talleres de Salsa",
+                    "Saca el ritmo que llevas dentro y aprende nuevos pasos.",
+                  ],
+                ] as [ImageMetadata, string, string][]
+              ).map(([image, title, description]) => (
+                <li class="bg-white rounded-lg shadow-md overflow-hidden w-72 flex-shrink-0">
+                  <div class="bg-gray-200 h-48 flex items-center justify-center">
+                    <Image
+                      src={image}
+                      alt={title}
+                      class="size-full object-cover object-[60%_70%]"
+                    />
+                  </div>
+                  <div class="p-4">
+                    <h3 class="font-playfair text-xl font-bold mb-2">
+                      {title}
+                    </h3>
+                    <p>{description}</p>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

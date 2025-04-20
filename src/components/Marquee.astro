@@ -1,0 +1,65 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div
+  role="marquee"
+  aria-live="polite"
+  aria-atomic="true"
+  class={`marquee ${className}`}
+>
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<script>
+  const marqueeList = document.querySelectorAll(".marquee-container");
+
+  marqueeList.forEach((marquee) => {
+    const marqueeContent = marquee.querySelector(
+      ".marquee-content"
+    ) as HTMLDivElement | null;
+    if (!marqueeContent) {
+      console.error("No marquee content found");
+      return;
+    }
+
+    marquee.appendChild(marqueeContent.cloneNode(true));
+  });
+</script>
+
+<style>
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .marquee-container {
+    display: flex;
+    animation: marquee-animation 20s linear infinite;
+  }
+
+  .marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    min-width: 100%;
+    justify-content: space-around;
+  }
+
+  @keyframes marquee-animation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
